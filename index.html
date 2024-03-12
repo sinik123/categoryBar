@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+    <script>
+        function onclickFirst() {
+            console.log("dd");
+            var list = document.getElementById("list");
+            var newElem = document.createElement("li");
+            newElem.innerHTML = "침대프레임";
+            newElem.style.textIndent = "20px";
+            list.append(newElem);
+            list.insertAdjacent
+            newElem = document.createElement("li");
+            newElem.innerHTML = "침대+매트리스";
+            newElem.style.textIndent = "20px";
+            list.append(newElem);
+            newElem = document.createElement("li");
+            newElem.innerHTML = "침대부속가구";
+            newElem.style.textIndent = "20px";
+            list.append(newElem);
+        }
+    </script>
+</head>
+<body>
+    <!-- 가구
+        침대
+            침대프레임
+                일반침대
+                수납침대
+                저상형침대
+                패밀리침대
+                이층·벙커침대
+                하단매트리스·파운데이션
+                모션베드
+                돌침대·흙침대
+                접이식침대
+            침대+매트리스
+                일반침대
+                수납침대
+                저상형침대
+                패밀리침대
+                이층·벙커침대
+                투매트리스
+                모션베드
+            침대부속가구 -->
+    <div id="list">
+        <li onclick="onclickFirst()">침대</li>
+    </div>
+</body>
+</html>
