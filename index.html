@@ -4,102 +4,103 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Document</title>
+
     <script>
-        class Category {
-            constructor(id, name, upperId) {
-                this.id = id;
-                this.name = name;
-                this.upperId = upperId;
-            }
-        }
-
-        var categories = [
-            new Category(1, "가구", -1),
-            new Category(2, "침대", 1),
-            new Category(3, "침대프레임", 2),
-            new Category(4, "침대+매트리스", 2),
-            new Category(5, "침대부속가구", 2),
-            new Category(6, "일반침대", 3),
-            new Category(7, "수납침대", 3),
-            new Category(8, "저상형침대", 3),
-            new Category(9, "일반침대", 4),
-            new Category(10, "수납침대", 4),
-            new Category(11, "저상형침대", 4),
-        ];
-
-        
-        // for (var i = 0; i < categories.length - 1; ++i) {
-        //     var cat = categories[i];
-        //     console.log(cat.id + ", " + cat.name + ", " + cat.upperId);
+        // class Category {
+        //     constructor(id, name, upperId) {
+        //         this.id = id;
+        //         this.name = name;
+        //         this.upperId = upperId;
+        //     }
         // }
 
-        function openCategories() {
-            event.stopPropagation();
-            var parent = event.target;
+        // var categories = [
+        //     new Category(1, "가구", -1),
+        //     new Category(2, "침대", 1),
+        //     new Category(3, "침대프레임", 2),
+        //     new Category(4, "침대+매트리스", 2),
+        //     new Category(5, "침대부속가구", 2),
+        //     new Category(6, "일반침대", 3),
+        //     new Category(7, "수납침대", 3),
+        //     new Category(8, "저상형침대", 3),
+        //     new Category(9, "일반침대", 4),
+        //     new Category(10, "수납침대", 4),
+        //     new Category(11, "저상형침대", 4),
+        // ];
 
-            var count = parent.querySelectorAll("li").length;
-            console.log(count);
-            // if (count > 0) {
+        
+        // // for (var i = 0; i < categories.length - 1; ++i) {
+        // //     var cat = categories[i];
+        // //     console.log(cat.id + ", " + cat.name + ", " + cat.upperId);
+        // // }
 
-            //     while (parent.firstChild) {
-            //         if (parent.lastChild.tagName == "li") {
-            //             parent.removeChild(parent.lastChild);
-            //         } else {
-            //             break;
-            //         }
-            //     }
-            // } else {
-                var liText = parent.innerText;
-                var parentCat;
+        // function openCategories() {
+        //     event.stopPropagation();
+        //     var parent = event.target;
+
+        //     var count = parent.querySelectorAll("li").length;
+        //     console.log(count);
+        //     // if (count > 0) {
+
+        //     //     while (parent.firstChild) {
+        //     //         if (parent.lastChild.tagName == "li") {
+        //     //             parent.removeChild(parent.lastChild);
+        //     //         } else {
+        //     //             break;
+        //     //         }
+        //     //     }
+        //     // } else {
+        //         var liText = parent.innerText;
+        //         var parentCat;
             
-                console.log(liText);
-                for (var i = 0; i < categories.length - 1; ++i) {
-                    if (categories[i].name == liText) {
-                        parentCat = categories[i];
-                        break;
-                    }
-                }
+        //         console.log(liText);
+        //         for (var i = 0; i < categories.length - 1; ++i) {
+        //             if (categories[i].name == liText) {
+        //                 parentCat = categories[i];
+        //                 break;
+        //             }
+        //         }
 
-                for (var i = 0; i < categories.length - 1; ++i) {
-                    var cat = categories[i];
-                    if (cat.upperId == parentCat.id) {
-                        console.log("  " + cat.name);
+        //         for (var i = 0; i < categories.length - 1; ++i) {
+        //             var cat = categories[i];
+        //             if (cat.upperId == parentCat.id) {
+        //                 console.log("  " + cat.name);
 
-                        var newElement = document.createElement("li");
-                        newElement.innerText = cat.name;
-                        if (parent.style.textIndent == "20px") {
-                            newElement.style.textIndent = "40px";
-                        } else {
-                            newElement.style.textIndent = "20px";
-                        }
-                        newElement.addEventListener("click", openCategories)
+        //                 var newElement = document.createElement("li");
+        //                 newElement.innerText = cat.name;
+        //                 if (parent.style.textIndent == "20px") {
+        //                     newElement.style.textIndent = "40px";
+        //                 } else {
+        //                     newElement.style.textIndent = "20px";
+        //                 }
+        //                 newElement.addEventListener("click", openCategories)
 
-                        parent.appendChild(newElement);
-                    }
-                }
-            // }
-        }
-
-
+        //                 parent.appendChild(newElement);
+        //             }
+        //         }
+        //     // }
+        // }
 
 
-        function onclickFirst() {
-            console.log("dd");
-            var list = document.getElementById("list");
-            var newElem = document.createElement("li");
-            newElem.innerHTML = "침대프레임";
-            newElem.style.textIndent = "20px";
-            list.append(newElem);
-            list.insertAdjacent
-            newElem = document.createElement("li");
-            newElem.innerHTML = "침대+매트리스";
-            newElem.style.textIndent = "20px";
-            list.append(newElem);
-            newElem = document.createElement("li");
-            newElem.innerHTML = "침대부속가구";
-            newElem.style.textIndent = "20px";
-            list.append(newElem);
-        }
+
+
+        // function onclickFirst() {
+        //     console.log("dd");
+        //     var list = document.getElementById("list");
+        //     var newElem = document.createElement("li");
+        //     newElem.innerHTML = "침대프레임";
+        //     newElem.style.textIndent = "20px";
+        //     list.append(newElem);
+        //     list.insertAdjacent
+        //     newElem = document.createElement("li");
+        //     newElem.innerHTML = "침대+매트리스";
+        //     newElem.style.textIndent = "20px";
+        //     list.append(newElem);
+        //     newElem = document.createElement("li");
+        //     newElem.innerHTML = "침대부속가구";
+        //     newElem.style.textIndent = "20px";
+        //     list.append(newElem);
+        // }
     </script>
 </head>
 <body>
@@ -124,8 +125,119 @@
                 투매트리스
                 모션베드
             침대부속가구 -->
-    <div id="list">
+    <!-- <div id="list">
         <li onclick="openCategories()">침대</li>
-    </div>
+    </div> -->
+    <style>
+        nav {
+            display: inline-block;
+            background-color: #f3f3f3;
+        }
+
+        li {
+            list-style: none;
+        }
+
+        ul {
+            padding: 0;
+        }
+
+        .firstChild {
+            margin-left: 10px;
+        }
+
+        .secondChild {
+            margin-left: 10px;
+        }
+
+        .close {
+            display: none;
+            overflow: hidden;
+        }
+        .closing {
+            display: block;
+            overflow: hidden;
+            height: 0px;
+            background-color: red;
+        }
+        
+        .open {
+            display: block;
+            overflow: hidden;
+        }
+
+        .opening {
+            display: block;
+            overflow: hidden;
+            height: 0px;
+            background-color: blue;
+        }
+
+        /* .open:hover {
+            display: block;
+            overflow: hidden;
+            height: 100px;
+            background-color: blue;
+        } */
+    </style>
+    <script>
+        function listOpenClose() {
+            event.stopPropagation();
+            var t = event.target.nextElementSibling;
+            
+            if (t.classList.contains("close")) {
+                t.classList.remove("close");
+                t.className = "open";
+                // t.setAttribute("style", "height: 99px; transition: height 1s;");
+            } else if (t.classList.contains("open")) {
+                t.classList.remove("open");
+                t.className = "close";
+                // t.setAttribute("style", "height: 0px; transition: height 1s;");
+            }
+
+
+            
+            
+        }
+    </script>
+
+    <nav>
+        <ul>
+            <li onclick="listOpenClose()">
+                침대
+            </li>
+            <div class="close">
+                <ul class="firstChild">
+                    <li onclick="listOpenClose()">
+                        침대프레임
+                    </li>
+                    <div class="close">
+                        <ul class="secondChild">
+                            <li>일반침대</li>
+                            <li>수납침대</li>
+                            <li>저상형침대</li>
+                            <li>패밀리침대</li>
+                            <li>이층·벙커침대</li>
+                        </ul>
+                    </div>
+                    <li onclick="listOpenClose()">
+                        침대+매트리스
+                    </li>
+                    <div class="close">
+                        <ul class="secondChild">
+                            <li>일반침대</li>
+                            <li>수납침대</li>
+                            <li>저상형침대</li>
+                            <li>패밀리침대</li>
+                            <li>이층·벙커침대</li>
+                        </ul>
+                    </div>
+                    <li>
+                        침대부속가구
+                    </li>
+                </ul>
+            </div>
+        </ul>
+    </nav>
 </body>
 </html>
